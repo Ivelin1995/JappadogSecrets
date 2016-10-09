@@ -14,10 +14,15 @@ class Sales extends Application
 	 * map to /welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	//function for passing and rendering the information for the main Sales page which is the menu.
 	public function index()
 	{
+		// View to be used
 		$this->data['pagebody'] = 'sales/menu';
+		// Title of the page
 		$this->data['pagetitle'] = 'JappaDog';
+		// Grab all items from Stock
 		$source = $this->Stock->all();
 		$menu = array ();
 		foreach ($source as $record)
@@ -28,9 +33,12 @@ class Sales extends Application
 		$this->render();
 	}
 
+	//function for passing and rendering information for a specific menu item's detailed page
 	public function itemdetail($name)
 	{
+		// View to be used
 		$this->data['pagebody'] = 'sales/itemdetail';
+		// Grabs the specific menu item based on its name variable
 		$menu = $this->Stock->get($name);
 		$this->data['name'] = $menu['name'];
 		$this->data['quantity'] = $menu['quantity'];
