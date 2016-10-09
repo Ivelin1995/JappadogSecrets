@@ -21,6 +21,12 @@ class Welcome extends Application
 	{
 		$this->data['pagebody'] = 'homepage';
 		$this->data['pagetitle'] = 'JappaDog';
+		$this->data['subtitle'] = 'Sales #';
+		
+		// This will be replaced with transaction model in assignment 2.
+		$this->data['InventoryCost'] = '100,000';
+		$this->data['Revenue'] = '200,000';
+		$this->data['SalesCost'] = '50,000';
 		$this->render(); 
 	}
 
