@@ -1,6 +1,7 @@
 <?php
 
 class Stock extends CI_Model {
+  // Mock data used for our menu items and quantity on hand
 	var $data = array(
 		array('id' => '1',
           'name' => 'Terimayo',
@@ -41,13 +42,13 @@ class Stock extends CI_Model {
 
 	public function get($name)
 	{
-		// iterate over the data until we find the one we want
+		// Iterate over the data until we find the one we want
 		foreach ($this->data as $record)
 			if ($record['name'] == $name)
 				return $record;
 		return null;
 	}
-	// retrieve all of the quotes
+	// Retrieve all of the menu items
 	public function all()
 	{
 		return $this->data;
